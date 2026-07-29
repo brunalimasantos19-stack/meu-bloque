@@ -1,99 +1,116 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Sabor na Cozinha</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #fff8f2;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Professor Marcelo e [Seu Nome Aqui]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-    header {
-      background-color: #ff7a00;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-    nav {
-      background-color: #ffa94d;
-      padding: 10px;
-      text-align: center;
-    }
+        main {
+            background-color: #fff;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
+        article {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
 
-    .container {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
 
-    .post {
-      background: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+        .artigo-autor {
+            font-weight: bold;
+        }
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #ff7a00;
-      color: white;
-      margin-top: 20px;
-    }
-  </style>
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 
 <body>
-
-<header>
-  <h1>🍴 Sabor na Cozinha</h1>
-  <p>Receitas simples, deliciosas e feitas com amor</p>
-</header>
-
-<nav>
-  <a href="#">Início</a>
-  <a href="#">Receitas</a>
-  <a href="#">Dicas</a>
-  <a href="#">Contato</a>
-</nav>
-
-<div class="container">
-
-  <div class="post">
-    <h2>🍝 Macarrão ao Alho e Óleo Perfeito</h2>
-    <p><strong>Ingredientes:</strong> macarrão, alho, azeite, sal e salsinha.</p>
-    <p>Uma receita rápida e deliciosa para qualquer dia da semana. O segredo está em dourar bem o alho sem queimar.</p>
-  </div>
-
-  <div class="post">
-    <h2>🍰 Bolo de Chocolate Simples</h2>
-    <p><strong>Ingredientes:</strong> farinha, açúcar, ovos, chocolate em pó, leite e fermento.</p>
-    <p>Fofinho e fácil de fazer, perfeito para o café da tarde. Pode cobrir com brigadeiro para ficar ainda melhor!</p>
-  </div>
-
-  <div class="post">
-    <h2>🥗 Salada Fresca e Saudável</h2>
-    <p><strong>Ingredientes:</strong> alface, tomate, cenoura, pepino e azeite.</p>
-    <p>Leve, nutritiva e ideal para acompanhar qualquer refeição.</p>
-  </div>
-
-</div>
-
-<footer>
-  <p>© 2026 Sabor na Cozinha - Todos os direitos reservados</p>
-</footer>
-
+    <header>
+        <h1>Blog do Professor Marcelo e [Seu Nome Aqui]</h1>
+        <p>Vou compartilhar sobre desenvolvimento web, programação e muito mais!</p>
+    </header>
+    <main>
+        <article>
+            <img src="imagem-blog.png" alt="Descrição curta da imagem no máximo 2 linhas.">
+            <div>
+                <h2>Título do 1º post</h2>
+                <p class="artigo-autor">Por: [Seu Nome Aqui]</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar sobre...</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+        <article>
+            <img src="imagem-blog.png" alt="Descrição curta da imagem no máximo 2 linhas.">
+            <div>
+                <h2>Título do 2º post</h2>
+                <p class="artigo-autor">Por: [Seu Nome Aqui]</p>
+                <p>Escrita do 2º post.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function(botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false) {
+                texto.textContent++;
+                curtiu = true;
+            } else {
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    })
+</script>
+
 </html>
